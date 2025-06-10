@@ -5,9 +5,9 @@ import Container from '@mui/material/Container';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TablePaginationComponent from '../../../../userPanelComponent/TablePaginationComponent';
-import TransferTLCTwoPointORedeemWalletTableHead from "./transferTLCTwoPointORedeemWalletTableHead/TransferTLCTwoPointORedeemWalletTableHead"
-import TransferTLCTwoPointORedeemWalletTableRow from "./transferTLCTwoPointORedeemWalletTableRow/TransferTLCTwoPointORedeemWalletTableRow"
-import TransferTLCTwoPointORedeemWalletTableToolbar from "./transferTLCTwoPointORedeemWalletTableToolbar/TransferTLCTwoPointORedeemWalletTableToolbar"
+// import TransferTLCTwoPointORedeemWalletTableHead from "./transferTLCTwoPointORedeemWalletTableHead/TransferTLCTwoPointORedeemWalletTableHead"
+// import TransferTLCTwoPointORedeemWalletTableRow from "./transferTLCTwoPointORedeemWalletTableRow/TransferTLCTwoPointORedeemWalletTableRow"
+// import TransferTLCTwoPointORedeemWalletTableToolbar from "./transferTLCTwoPointORedeemWalletTableToolbar/TransferTLCTwoPointORedeemWalletTableToolbar"
 
 
 function TransferTLCTwoPointORedeemWalletTable() {
@@ -22,12 +22,12 @@ function TransferTLCTwoPointORedeemWalletTable() {
             padding: { xs: "1rem", md: "2rem" }
           }}
         >
-          <TransferTLCTwoPointORedeemWalletTableToolbar />
+          {/* <TransferTLCTwoPointORedeemWalletTableToolbar /> */}
           <TableContainer>
             <Table sx={{ minWidth: 800 }}>
-              <TransferTLCTwoPointORedeemWalletTableHead />
+              {/* <TransferTLCTwoPointORedeemWalletTableHead /> */}
               <TableBody>
-                <TransferTLCTwoPointORedeemWalletTableRow />
+                {/* <TransferTLCTwoPointORedeemWalletTableRow /> */}
               </TableBody>
             </Table>
           </TableContainer>

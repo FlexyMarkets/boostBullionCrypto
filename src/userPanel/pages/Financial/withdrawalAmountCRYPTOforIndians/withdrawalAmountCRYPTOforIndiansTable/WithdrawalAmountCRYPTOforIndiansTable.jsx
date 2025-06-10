@@ -5,9 +5,9 @@ import Container from '@mui/material/Container';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TablePaginationComponent from '../../../../userPanelComponent/TablePaginationComponent';
-import WithdrawalAmountCRYPTOforIndiansTableHead from "./withdrawalAmountCRYPTOforIndiansTableHead/WithdrawalAmountCRYPTOforIndiansTableHead"
-import WithdrawalAmountCRYPTOforIndiansTableRow from "./withdrawalAmountCRYPTOforIndiansTableRow/WithdrawalAmountCRYPTOforIndiansTableRow"
-import WithdrawalAmountCRYPTOforIndiansTableToolbar from "./withdrawalAmountCRYPTOforIndiansTableToolbar/WithdrawalAmountCRYPTOforIndiansTableToolbar"
+// import WithdrawalAmountCRYPTOforIndiansTableHead from "./withdrawalAmountCRYPTOforIndiansTableHead/WithdrawalAmountCRYPTOforIndiansTableHead"
+// import WithdrawalAmountCRYPTOforIndiansTableRow from "./withdrawalAmountCRYPTOforIndiansTableRow/WithdrawalAmountCRYPTOforIndiansTableRow"
+// import WithdrawalAmountCRYPTOforIndiansTableToolbar from "./withdrawalAmountCRYPTOforIndiansTableToolbar/WithdrawalAmountCRYPTOforIndiansTableToolbar"
 
 
 function WithdrawalAmountCRYPTOforIndiansTable() {
@@ -22,12 +22,12 @@ function WithdrawalAmountCRYPTOforIndiansTable() {
             padding: { xs: "1rem", md: "2rem" }
           }}
         >
-          <WithdrawalAmountCRYPTOforIndiansTableToolbar />
+          {/* <WithdrawalAmountCRYPTOforIndiansTableToolbar /> */}
           <TableContainer>
             <Table sx={{ minWidth: 800 }}>
-              <WithdrawalAmountCRYPTOforIndiansTableHead />
+              {/* <WithdrawalAmountCRYPTOforIndiansTableHead /> */}
               <TableBody>
-                <WithdrawalAmountCRYPTOforIndiansTableRow />
+                {/* <WithdrawalAmountCRYPTOforIndiansTableRow /> */}
               </TableBody>
             </Table>
           </TableContainer>
