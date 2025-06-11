@@ -5,7 +5,7 @@ import { setNotification } from '../../../../../globalState/notification/notific
 export async function initiateSocketConnection({ token, network, amount, dispatch }) {
 
     return new Promise((resolve, reject) => {
-        const socket = io('https://barter.boostbullion.com', {
+        const socket = io('https://user.boostbullion.com', {
             autoConnect: false,
             extraHeaders: {
                 authorization: token
@@ -15,7 +15,7 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
         socket.connect();
 
         socket.on('connect', () => {
-            // console.log('✅ Connected');
+            console.log('✅ Connected');
             socket.emit('startPayment', { network, amount });
         });
 
@@ -23,11 +23,11 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
             dispatch(setDepositQRData(data?.data?.payment_info[0]))
             dispatch(setCreatedTime(data?.data?.created_time))
             dispatch(setExpireTime(data?.data?.expire_time))
-            // console.log('📩 paymentReady:', data);
+            console.log('📩 paymentReady:', data);
         });
 
         socket.on('paymentStatus', (data) => {
-            // console.log('📩 paymentStatus:', data);
+            console.log('📩 paymentStatus:', data);
             if (data) {
                 dispatch(setNotification({ open: true, message: "Deposit done successfully", severity: "success" }));
                 dispatch(setHasTimedOut(true));
