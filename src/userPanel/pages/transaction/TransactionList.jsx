@@ -46,13 +46,15 @@ function TransactionList() {
   const formattedFromDate = filters.startDate ? dayjs(filters.startDate).format('YYYY-MM-DD') : undefined;
   const formattedToDate = filters.endDate ? dayjs(filters.endDate).format('YYYY-MM-DD') : undefined;
 
-  const { data: listData, isLoading, isError } = useTransactionsListQuery({
+  const { data: listData, isLoading, isError, error } = useTransactionsListQuery({
     page: pagination.pageIndex + 1,
     sizePerPage: pagination.pageSize,
     ...filters,
     startDate: formattedFromDate,
     endDate: formattedToDate,
   });
+
+  const showError = error?.data?.message
 
   const transactionsListData = listData?.data?.docs || [];
 
@@ -78,6 +80,12 @@ function TransactionList() {
     enableGlobalFilter: false,
     paginationDisplayMode: 'pages',
     positionToolbarAlertBanner: 'bottom',
+    muiToolbarAlertBannerProps: isError
+      ? {
+        color: 'error',
+        children: showError || 'Error loading transactions.',
+      }
+      : undefined,
     renderTopToolbarCustomActions: () => (
       <Box
         sx={{

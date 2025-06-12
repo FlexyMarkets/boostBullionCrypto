@@ -45,10 +45,12 @@ const handleExportToExcel = (rows) => {
 
 function TopTenTransactionHistory() {
 
-  const { data: listData, isLoading, isError } = useTransactionsListQuery({
+  const { data: listData, isLoading, isError, error } = useTransactionsListQuery({
     // page: pagination.pageIndex + 1,
     // sizePerPage: pagination.pageSize,
   });
+
+  const showError = error?.data?.message
 
   const transactionsListData = listData?.data?.docs || [];
 
@@ -72,6 +74,12 @@ function TopTenTransactionHistory() {
     enableGlobalFilter: false,
     paginationDisplayMode: 'pages',
     positionToolbarAlertBanner: 'bottom',
+    muiToolbarAlertBannerProps: isError
+      ? {
+        color: 'error',
+        children: showError || 'Error loading transactions.',
+      }
+      : undefined,
     // renderTopToolbarCustomActions: () => (
     //   <Box
     //     sx={{

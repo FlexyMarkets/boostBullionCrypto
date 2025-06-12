@@ -24,7 +24,9 @@ const handleExportToExcel = (rows) => {
 
 function ReferralList() {
 
-    const { data: listData, isLoading, isError } = useGetReferralListQuery();
+    const { data: listData, isLoading, isError, error } = useGetReferralListQuery();
+
+    const showError = error?.data?.message
 
     const referralListData = listData?.data || [];
 
@@ -42,6 +44,12 @@ function ReferralList() {
         enableGlobalFilter: false,
         paginationDisplayMode: 'pages',
         positionToolbarAlertBanner: 'bottom',
+        muiToolbarAlertBannerProps: isError
+            ? {
+                color: 'error',
+                children: showError || 'Error loading transactions.',
+            }
+            : undefined,
         renderTopToolbarCustomActions: () => (
             <Box
                 sx={{
