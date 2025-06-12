@@ -86,10 +86,10 @@ function Details() {
                             }}
                         >
                             <Typography sx={{ wordBreak: "break-all" }}>
-                                {isLoading ? <Skeleton width={200} height={30} /> : `https://user.boostbullion.com/signup?referral=${userData?.referralCode}` || null}
+                                {isLoading ? <Skeleton width={200} height={30} /> : `https://boostbullion.com/signup?referral=${userData?.referralCode}` || null}
                             </Typography>
                             <Tooltip title={copied ? "Copied!" : "Copy"} sx={{ border: "1px solid primary.main", borderRadius: "10px", my: "0" }}>
-                                <IconButton onClick={() => handleCopy(`https://user.boostbullion.com/signup?referral=${userData?.referralCode}`)}>
+                                <IconButton onClick={() => handleCopy(`https://boostbullion.com/signup?referral=${userData?.referralCode}`)}>
                                     <ContentCopyOutlinedIcon />
                                 </IconButton>
                             </Tooltip>
