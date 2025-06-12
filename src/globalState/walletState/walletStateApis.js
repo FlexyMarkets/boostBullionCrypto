@@ -172,6 +172,13 @@ export const walletStateApis = createApi({
                 body: data
             })
         }),
+        convertRewardToWallet: builder.mutation({
+            query: (data) => ({
+                url: "/wallet/convert",
+                method: "POST",
+                body: data
+            })
+        }),
         // pendingTransactionList: builder.query({
         //     query: ({ page = 1, sizePerPage = 10, search = "", status, transactionType, paymentMethod, fromDate, toDate }) => {
         //         const params = {};
@@ -232,6 +239,7 @@ export const {
     useVerifyTransactionHashMutation,
     useSetTransactionPasswordMutation,
     useUpdateTransactionPasswordMutation,
+    useConvertRewardToWalletMutation,
     // useWalletWithdrawMutation,
     // useInternalTransferMutation,
     useTransactionsListQuery,
