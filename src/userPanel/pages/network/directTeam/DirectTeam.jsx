@@ -3,7 +3,7 @@ import ReferralTree from './referralTree/ReferralTree';
 import { useGetReferralListQuery, useGetReferralInfoQuery } from '../../../../globalState/walletState/walletStateApis';
 import ReferralInfo from './referralInfo/ReferralInfo';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedReferralCode } from '../../../../globalState/walletState/walletStateSlice';
+import { removeSelectedReferralCode, setSelectedReferralCode } from '../../../../globalState/walletState/walletStateSlice';
 import { parseReferralTree } from "../../../utils/parseReferralTree"
 import ReferralInfoModal from './referralTree/ReferralInfoModal';
 import { useState } from 'react';
@@ -31,7 +31,10 @@ function DirectTeam() {
         setOpenModal(true);
     }
 
-    const handleCloseModal = () => setOpenModal(false);
+    const handleCloseModal = () => {
+        setOpenModal(false);
+        dispatch(removeSelectedReferralCode())
+    }
 
     return (
         <Container sx={{ mt: "100px" }}>

@@ -23,6 +23,10 @@ const walletStateSlice = createSlice({
             localStorage.setItem("selectedReferralCode", action.payload)
             state.selectedReferralCode = action.payload
         },
+        removeSelectedReferralCode: (state) => {
+            state.selectedReferralCode = null
+            localStorage.removeItem("selectedReferralCode")
+        },
         setHasTimedOut: (state, action) => {
             state.hasTimedOut = action.payload;
             if (action.payload) {
@@ -42,6 +46,7 @@ export const {
     removeDepositQRData,
     setSelectedReferralCode,
     setHasTimedOut,
-    setCountdownEndTime
+    setCountdownEndTime,
+    removeSelectedReferralCode
 } = walletStateSlice.actions;
 export default walletStateSlice.reducer;

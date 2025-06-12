@@ -44,8 +44,8 @@ function Details() {
     }
 
     const totalIncomeAndWidthdrawal = {
-        "Total Income": `$ ${userData?.totalRewardBalance}`,
-        "Total Withdrawal": `$ ${userData?.totalWithdrawalBalance}`
+        "Total Income": userData?.totalRewardBalance,
+        "Total Withdrawal": userData?.totalWithdrawalBalance
     }
 
     const matches = useMediaQuery('(max-width:450px)');
@@ -191,7 +191,12 @@ function Details() {
                                         {keys}
                                     </Typography>
                                     <Typography variant="h5" fontWeight="bold" sx={{ color: "primary.main" }}>
-                                        {isLoading ? <Skeleton width={200} height={30} /> : values || 0}
+                                        $ {isLoading
+                                            ? <Skeleton width={200} height={30} />
+                                            : Number(values || 0).toLocaleString(undefined, {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 4,
+                                            })}
                                     </Typography>
                                 </Grid>
                             ))
