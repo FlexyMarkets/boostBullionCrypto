@@ -15,7 +15,6 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
         socket.connect();
 
         socket.on('connect', () => {
-            console.log('✅ Connected');
             socket.emit('startPayment', { network, amount });
         });
 
@@ -23,11 +22,9 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
             dispatch(setDepositQRData(data?.data?.payment_info[0]))
             dispatch(setCreatedTime(data?.data?.created_time))
             dispatch(setExpireTime(data?.data?.expire_time))
-            console.log('📩 paymentReady:', data);
         });
 
         socket.on('paymentStatus', (data) => {
-            console.log('📩 paymentStatus:', data);
             if (data) {
                 dispatch(setNotification({ open: true, message: "Deposit done successfully", severity: "success" }));
                 dispatch(setHasTimedOut(true));
