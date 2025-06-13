@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { login, setUserData } from "./authSlice";
+import { login, setUserData, setTempToken } from "./authSlice";
 import { setRole } from "../admin/adminStateSlice";
 
 export const authApi = createApi({
@@ -75,7 +75,17 @@ export const authApi = createApi({
                     url: "/forgot/password/verify/otp",
                     method: "PATCH",
                     body: data
-                })
+                }),
+            async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+                try {
+                    const { data } = await queryFulfilled;
+                    if (data?.data) {
+                        dispatch(setTempToken(data?.data));
+                    }
+                } catch (error) {
+                    console.error("Login failed:", error);
+                }
+            }
         }),
         resetPassword: builder.mutation({
             query: (data) => ({

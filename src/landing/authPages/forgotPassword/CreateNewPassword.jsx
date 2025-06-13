@@ -8,6 +8,7 @@ import { useResetPasswordMutation } from '../../../globalState/auth/authApis';
 import * as z from 'zod';
 import { setNotification } from '../../../globalState/notification/notificationSlice';
 import { useDispatch } from 'react-redux';
+import { setTempToken } from '../../../globalState/auth/authSlice';
 
 export const createNewPasswordSchema = z.object({
     newPassword: z.string().min(8, "Password must be at least 8 characters"),
@@ -42,13 +43,14 @@ function CreateNewPassword({ onClose }) {
         defaultValues
     });
 
-    const [resetPassword] = useResetPasswordMutation()
+    const [resetPassword, { isLoading }] = useResetPasswordMutation()
 
     const onSubmit = async (data) => {
         try {
             const response = await resetPassword(data).unwrap();
             if (response?.status) {
                 dispatch(setNotification({ open: true, message: response?.message, severity: "success" }));
+                dispatch(setTempToken(""))
                 onClose(true)
             }
         } catch (error) {
@@ -101,6 +103,7 @@ function CreateNewPassword({ onClose }) {
             <Button
                 type="submit"
                 size="small"
+                disabled={isLoading}
                 variant="contained"
                 sx={{
                     textTransform: "capitalize",

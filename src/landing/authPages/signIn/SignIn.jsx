@@ -122,70 +122,70 @@ function SignIn() {
                     border: "1px solid rgba(255, 255, 255, 0.2)",
                 }}
             >
-                <CardContent
-                    sx={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}
-                    component={"form"}
-                    onSubmit={handleSubmit(onSubmit)}
-                >
+                <CardContent>
                     <Typography variant="h4" fontWeight="bold" align="center" color="white">Sign In</Typography>
-                    <Box>
-                        <InputLabel sx={{ mb: ".5rem", color: "white", fontSize: "14px" }}>Login Id</InputLabel>
-                        <OutlinedInput
+                    <Box
+                        sx={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}
+                        component={"form"}
+                        onSubmit={handleSubmit(onSubmit)}
+                    >
+                        <Box>
+                            <InputLabel sx={{ mb: ".5rem", color: "white", fontSize: "14px" }}>Login Id</InputLabel>
+                            <OutlinedInput
+                                size="small"
+                                {...register("loginId", { required: true })}
+                                placeholder='LogIn id'
+                                fullWidth
+                                startAdornment={<InputAdornment position="start"><PersonIcon sx={{ color: '#f1b811', fontSize: "20px" }} /></InputAdornment>}
+                                sx={{ ...inputStyles }}
+                            />
+                            {errors.loginId && <Typography color="error">{errors.loginId.message}</Typography>}
+                        </Box>
+                        <Box>
+                            <InputLabel sx={{ mb: ".5rem", color: "white", fontSize: "14px" }}>Password</InputLabel>
+                            <OutlinedInput
+                                size="small"
+                                {...register("password", { required: true })}
+                                placeholder='********'
+                                fullWidth
+                                type={showPassword ? 'text' : 'password'}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label={
+                                                showPassword ? 'hide the password' : 'display the password'
+                                            }
+                                            onClick={handleClickShowPassword}
+                                            edge="end"
+                                        >
+                                            {showPassword ? <VisibilityOff sx={{ color: '#f1b811', fontSize: "20px" }} /> : <Visibility sx={{ color: '#f1b811', fontSize: "20px" }} />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                startAdornment={<InputAdornment position="start"><LockIcon sx={{ color: '#f1b811', fontSize: "20px" }} /></InputAdornment>}
+                                sx={{ ...inputStyles }}
+                            />
+                            {errors.password && <Typography color="error">{errors.password.message}</Typography>}
+                        </Box>
+                        <Button
+                            type="submit"
+                            disabled={isLoading}
                             size="small"
-                            {...register("loginId", { required: true })}
-                            placeholder='LogIn id'
-                            fullWidth
-                            startAdornment={<InputAdornment position="start"><PersonIcon sx={{ color: '#f1b811', fontSize: "20px" }} /></InputAdornment>}
-                            sx={{ ...inputStyles }}
-                        />
-                        {errors.loginId && <Typography color="error">{errors.loginId.message}</Typography>}
+                            variant='contained'
+                            sx={{
+                                textTransform: "capitalize",
+                                boxShadow: "none",
+                                bgcolor: "#f1b811",
+                                fontSize: "1.1rem",
+                                color: "white",
+                                "&:hover": {
+                                    boxShadow: "none"
+                                }
+                            }}
+                        >Login</Button>
                     </Box>
-                    <Box>
-                        <InputLabel sx={{ mb: ".5rem", color: "white", fontSize: "14px" }}>Password</InputLabel>
-                        <OutlinedInput
-                            size="small"
-                            {...register("password", { required: true })}
-                            placeholder='********'
-                            fullWidth
-                            type={showPassword ? 'text' : 'password'}
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label={
-                                            showPassword ? 'hide the password' : 'display the password'
-                                        }
-                                        onClick={handleClickShowPassword}
-                                        edge="end"
-                                    >
-                                        {showPassword ? <VisibilityOff sx={{ color: '#f1b811', fontSize: "20px" }} /> : <Visibility sx={{ color: '#f1b811', fontSize: "20px" }} />}
-                                    </IconButton>
-                                </InputAdornment>
-                            }
-                            startAdornment={<InputAdornment position="start"><LockIcon sx={{ color: '#f1b811', fontSize: "20px" }} /></InputAdornment>}
-                            sx={{ ...inputStyles }}
-                        />
-                        {errors.password && <Typography color="error">{errors.password.message}</Typography>}
-                    </Box>
-                    <Box display="flex" justifyContent="space-between" alignItems="center">
-                        <ForgotPasswordModal btnName={"Forgot Password?"} />
-                    </Box>
-                    <Button
-                        type="submit"
-                        disabled={isLoading}
-                        size="small"
-                        variant='contained'
-                        sx={{
-                            textTransform: "capitalize",
-                            boxShadow: "none",
-                            bgcolor: "#f1b811",
-                            fontSize: "1.1rem",
-                            color: "white",
-                            "&:hover": {
-                                boxShadow: "none"
-                            }
-                        }}
-                    >Login</Button>
-                    <Typography textAlign="center" color="white" fontSize={"14px"}>
+                    <ForgotPasswordModal btnName={"Forgot Password?"} />
+                    <Typography textAlign="center" color="white" fontSize={"14px"} mt={"10px"}>
                         Don’t have an account? <Link to={"/signup"} style={{ textDecoration: "none" }}><Typography component="span" color="primary" sx={{ cursor: "pointer", color: '#f1b811', fontSize: "14px" }}>Sign up</Typography></Link>
                     </Typography>
                 </CardContent>
