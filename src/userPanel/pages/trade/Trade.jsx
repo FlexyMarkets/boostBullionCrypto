@@ -50,7 +50,7 @@ function Trade() {
     };
 
     return (
-        <Container sx={{ mt: "100px" }}>
+        <Stack sx={{ mt: "100px" }}>
             <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Trade</Typography>
             <Card
                 sx={{
@@ -102,7 +102,7 @@ function Trade() {
                     >Submit</Button>
                 </Stack>
             </Card>
-        </Container>
+        </Stack>
     )
 }
 

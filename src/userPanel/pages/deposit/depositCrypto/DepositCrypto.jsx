@@ -14,7 +14,7 @@ function DepositCrypto() {
 
   return (
     <Stack mt={"100px"}>
-      <Container><Typography variant="h4" fontWeight="bold" mb={"2rem"}>Deposit Balance</Typography></Container>
+      <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Deposit Balance</Typography>
       {/* <DepositCryptoNotice /> */}
       {/* <DepositAmountForm /> */}
       <TRCDepositForm />

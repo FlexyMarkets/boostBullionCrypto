@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Stack, Typography } from '@mui/material';
 import ReferralTree from './referralTree/ReferralTree';
 import { useGetReferralListQuery, useGetReferralInfoQuery } from '../../../../globalState/walletState/walletStateApis';
 import ReferralInfo from './referralInfo/ReferralInfo';
@@ -37,7 +37,7 @@ function DirectTeam() {
     }
 
     return (
-        <Container sx={{ mt: "100px" }}>
+        <Stack sx={{ mt: "100px" }}>
             <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Referral Tree</Typography>
             <ReferralTree
                 listData={listData}
@@ -52,7 +52,7 @@ function DirectTeam() {
                 contentData={referralInfo}
                 loading={referralInfoDataLoading}
             />
-        </Container>
+        </Stack>
     )
 }
 

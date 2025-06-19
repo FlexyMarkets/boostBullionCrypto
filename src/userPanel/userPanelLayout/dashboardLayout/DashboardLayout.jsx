@@ -191,7 +191,7 @@ function DashboardLayout() {
                         }
                     }}
                 >
-                    <Box sx={{ flex: 1 }}>
+                    <Box sx={{ flex: 1, mx: { xs: "1rem", md: "3rem" } }}>
                         <Suspense fallback={<Loading mt="20rem" />}>
                             <Outlet />
                         </Suspense>

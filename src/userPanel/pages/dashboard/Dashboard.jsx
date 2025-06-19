@@ -6,9 +6,9 @@ import TopTenTransactionHistory from './topTenTransactionHistory/TopTenTransacti
 function Dashboard() {
     return (
         <Stack mt={"100px"}>
-            <Container>
+            {/* <Container> */}
                 <Typography variant="h4" fontWeight="bold" gutterBottom>Dashboard</Typography>
-            </Container>
+            {/* </Container> */}
             <Details />
             <TopTenTransactionHistory />
             <ForexCrossRatesWidget />

@@ -24,7 +24,7 @@ function ProfileToggle() {
 
     return (
         <Stack mt={"2rem"}>
-            <Container>
+            {/* <Container> */}
                 <Card
                     sx={{
                         borderRadius: '1rem',
@@ -47,7 +47,7 @@ function ProfileToggle() {
                     />
                     <ActiveComponent />
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack>
     );
 }

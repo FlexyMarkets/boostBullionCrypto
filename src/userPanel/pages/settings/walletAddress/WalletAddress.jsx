@@ -5,7 +5,7 @@ import WalletAddressForm from "./walletAddressForm/WalletAddressForm";
 function WalletAddress() {
     return (
         <Stack  mt={"100px"}>
-            <Container><Typography variant="h4" fontWeight="bold" mb={"2rem"}>Wallet</Typography></Container>
+            <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Wallet</Typography>
             <WalletAddressForm />
             {/* <WalletAddressTable /> */}
         </Stack>

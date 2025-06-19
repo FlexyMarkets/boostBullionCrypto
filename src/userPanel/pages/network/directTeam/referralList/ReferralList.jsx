@@ -78,14 +78,14 @@ function ReferralList() {
     });
 
     return (
-        <Container sx={{ mt: "100px" }}>
+        <Stack sx={{ mt: "100px" }}>
             <Typography variant='h5' fontWeight={700} fontSize="1.8rem" mb={4}>
                 Referral List
             </Typography>
             <Stack sx={{ mt: 4, borderRadius: 2, overflow: 'hidden' }}>
                 <MaterialReactTable table={table} />
             </Stack>
-        </Container>
+        </Stack>
     );
 };
 

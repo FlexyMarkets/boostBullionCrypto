@@ -88,7 +88,7 @@ function InternalTransfer() {
 
     return (
         <Stack mt={"100px"}>
-            <Container>
+            {/* <Container> */}
                 <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Internal Transfer</Typography>
                 <Card
                     sx={{
@@ -168,7 +168,7 @@ function InternalTransfer() {
                         >Submit</Button>
                     </Stack>
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack>
     )
 }

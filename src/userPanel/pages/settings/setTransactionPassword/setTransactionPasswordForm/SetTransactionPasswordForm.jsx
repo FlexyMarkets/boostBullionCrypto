@@ -51,7 +51,7 @@ function SetTransactionPasswordForm() {
 
   return (
     <Stack>
-      <Container>
+      {/* <Container> */}
         <Card
           sx={{
             padding: { xs: "1rem", sm: "2rem" },
@@ -113,7 +113,7 @@ function SetTransactionPasswordForm() {
             >Submit</Button>
           </Stack>
         </Card>
-      </Container>
+      {/* </Container> */}
     </Stack>
   )
 }

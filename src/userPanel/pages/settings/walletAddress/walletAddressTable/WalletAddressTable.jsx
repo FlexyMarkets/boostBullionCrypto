@@ -14,7 +14,7 @@ function WalletAddressTable() {
 
   return (
     <Stack mt={"2rem"}>
-      <Container>
+      {/* <Container> */}
         <Card
           sx={{
             boxShadow: "0 0px 0px 0 rgba(0, 0, 0, 0.19), 0 0px 8px 0 rgba(0, 0, 0, 0.19)",
@@ -33,7 +33,7 @@ function WalletAddressTable() {
           </TableContainer>
           {/* <TablePaginationComponent /> */}
         </Card>
-      </Container>
+      {/* </Container> */}
     </Stack>
   );
 }

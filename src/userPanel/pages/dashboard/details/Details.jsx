@@ -52,7 +52,7 @@ function Details() {
 
     return (
         <Stack>
-            <Container>
+            {/* <Container> */}
                 <Stack
                     sx={{
                         flexDirection: { xs: "column", md: "row" },
@@ -203,7 +203,7 @@ function Details() {
                         }
                     </Grid>
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack>
     );
 };

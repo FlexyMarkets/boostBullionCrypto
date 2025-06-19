@@ -66,7 +66,7 @@ function Swap() {
 
     return (
         <Stack mt={"100px"}>
-            <Container>
+            {/* <Container> */}
                 <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Swap wallet transfer</Typography>
                 <Card
                     sx={{
@@ -159,7 +159,7 @@ function Swap() {
                         >Submit</Button>
                     </Stack>
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack>
     )
 }

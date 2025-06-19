@@ -108,14 +108,14 @@ function TopTenTransactionHistory() {
   });
 
   return (
-    <Container sx={{ mt: "3rem" }}>
+    <Stack sx={{ mt: "3rem" }}>
       <Typography variant='h5' fontWeight={700} fontSize="1.8rem" mb={4}>
         Top 10 transaction list
       </Typography>
       <Stack sx={{ borderRadius: 2, overflow: 'hidden' }}>
         <MaterialReactTable table={table} />
       </Stack>
-    </Container>
+    </Stack>
   );
 };
 

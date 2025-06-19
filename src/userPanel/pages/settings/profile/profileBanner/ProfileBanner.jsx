@@ -16,7 +16,7 @@ function ProfileBanner() {
 
     return (
         <Stack>
-            <Container>
+            {/* <Container> */}
                 <Card
                     sx={{
                         borderRadius: '1rem',
@@ -64,7 +64,7 @@ function ProfileBanner() {
                         ))}
                     </Stack>
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack>
     );
 }

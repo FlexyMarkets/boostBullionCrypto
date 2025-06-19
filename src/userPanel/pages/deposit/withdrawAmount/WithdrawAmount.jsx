@@ -57,7 +57,7 @@ function WithdrawAmount() {
 
     return (
         <Stack mt={"100px"}>
-            <Container>
+            {/* <Container> */}
                 <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Withdraw amount</Typography>
                 <Card
                     sx={{
@@ -141,7 +141,7 @@ function WithdrawAmount() {
                         >Submit</Button>
                     </Stack>
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack>
     )
 }

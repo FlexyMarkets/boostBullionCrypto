@@ -42,7 +42,7 @@ function NewTicket() {
 
     return (
         <Stack sx={{ mt: "100px" }}>
-            <Container>
+            {/* <Container> */}
                 <Typography variant='h5' fontWeight={"700"} fontSize={"1.8rem"} mb={"2rem"}>Create New Ticket</Typography>
                 <Card
                     sx={{
@@ -94,7 +94,7 @@ function NewTicket() {
                         }}
                     >Submit</Button>
                 </Card>
-            </Container>
+            {/* </Container> */}
         </Stack >
     )
 }
