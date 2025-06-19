@@ -57,7 +57,6 @@ const AccountStatement = lazy(() => import("../pages/Financial/accountStatement/
 const IncomeSummary = lazy(() => import("../pages/Financial/incomeSummary/IncomeSummary"));
 const WalletHistory = lazy(() => import("../pages/Financial/walletHistory/WalletHistory"));
 const Reward = lazy(() => import("../pages/reward/Reward"));
-const Support = lazy(() => import("../pages/support/Support"));
 const Dashboard = lazy(() => import("../pages/dashboard/Dashboard"));
 const TransactionList = lazy(() => import("../pages/transaction/TransactionList"));
 const Referral = lazy(() => import("../pages/referral/Referral"))
@@ -69,6 +68,9 @@ const TransferFund = lazy(() => import("../pages/deposit/transferFund/TransferFu
 const WithdrawAmount = lazy(() => import("../pages/deposit/withdrawAmount/WithdrawAmount"));
 const AddFund = lazy(() => import("../pages/deposit/addFund/AddFund"));
 const InternalTransfer = lazy(() => import("../pages/deposit/internalTransfer/InternalTransfer"));
+const MyTickets = lazy(() => import("../pages/helpDesk/myTickets/MyTickets"));
+const ShowTicket = lazy(() => import("../pages/helpDesk/showTicket/ShowTicket"));
+const NewTicket = lazy(() => import("../pages/helpDesk/newTicket/NewTicket"));
 
 
 export const routing = [
@@ -141,6 +143,9 @@ export const routing = [
     // { path: "financial/wallet-history", element: <WalletHistory /> },
     // { path: "reward", element: <Reward /> },
     // { path: "support", element: <Support /> },
+    { path: "/support/myTickets", element: <MyTickets /> },
+    { path: "/support/showTicket", element: <ShowTicket /> },
+    { path: "/support/newTicket", element: <NewTicket /> },
     { path: "transaction", element: <TransactionList /> },
     // { path: "referralList", element: <Referral /> }
 ]

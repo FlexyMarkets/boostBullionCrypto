@@ -832,7 +832,23 @@ export const userNavigation = [
     //     segment: '/dashboard/support',
     //     title: 'Support',
     //     icon: HelpIcon,
-    // }
+    // },
+    {
+        title: 'Help Desk',
+        icon: HelpIcon,
+        children: [
+            {
+                segment: '/dashboard/support/newTicket',
+                title: 'New Ticket',
+                icon: CircleOutlinedIcon,
+            },
+            {
+                segment: '/dashboard/support/myTickets',
+                title: 'My Tickets',
+                icon: CircleOutlinedIcon,
+            }
+        ],
+    },
     {
         title: 'Log out',
         icon: LogoutIcon

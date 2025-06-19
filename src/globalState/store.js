@@ -8,6 +8,7 @@ import { profileSettingApi } from './settings/profileSettingApi';
 import { robotApi } from './robot/robotApi';
 import { walletStateApis } from './walletState/walletStateApis';
 import { adminStateApis } from './admin/adminStateApis';
+import { supportStateApis } from "./supportState/supportStateApis"
 import adminStateSlice from "./admin/adminStateSlice"
 import paymentStateSlice from "./paymentState/paymentStateSlice"
 
@@ -23,7 +24,8 @@ const store = configureStore({
         [profileSettingApi.reducerPath]: profileSettingApi.reducer,
         [robotApi.reducerPath]: robotApi.reducer,
         [walletStateApis.reducerPath]: walletStateApis.reducer,
-        [adminStateApis.reducerPath]: adminStateApis.reducer
+        [adminStateApis.reducerPath]: adminStateApis.reducer,
+        [supportStateApis.reducerPath]: supportStateApis.reducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware()
         .concat(
@@ -31,7 +33,8 @@ const store = configureStore({
             profileSettingApi.middleware,
             robotApi.middleware,
             walletStateApis.middleware,
-            adminStateApis.middleware
+            adminStateApis.middleware,
+            supportStateApis.middleware
         )
 });
 
