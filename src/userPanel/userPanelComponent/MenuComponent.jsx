@@ -14,6 +14,55 @@ import { useDispatch } from 'react-redux';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 
+
+const rankMapping = [
+    {
+        rankTitle: "0",
+        description: "Entry"
+    },
+    {
+        rankTitle: "1",
+        description: "Connector"
+    },
+    {
+        rankTitle: "2",
+        description: "Builder"
+    },
+    {
+        rankTitle: "3",
+        description: "Coordinator"
+    },
+    {
+        rankTitle: "4",
+        description: "Leader"
+    },
+    {
+        rankTitle: "5",
+        description: "Strategist"
+    },
+    {
+        rankTitle: "6",
+        description: "Advisor"
+    },
+    {
+        rankTitle: "7",
+        description: "Director"
+    },
+    {
+        rankTitle: "8",
+        description: "Partner"
+    },
+    {
+        rankTitle: "9",
+        description: "Executive"
+    },
+    {
+        rankTitle: "10",
+        description: "Chief"
+    }
+]
+
+
 function MenuComponent({ Icon, userData }) {
 
     const navigate = useNavigate()
@@ -31,6 +80,11 @@ function MenuComponent({ Icon, userData }) {
     function handleLogOut() {
         dispatch(logoutThunk());
         navigate("/", { replace: true });
+    }
+
+    const handleRankMaping = (rank) => {
+        const rankType = rankMapping.filter(item => item.rankTitle == rank)
+        return rankType?.[0]?.description
     }
 
     return (
@@ -90,7 +144,7 @@ function MenuComponent({ Icon, userData }) {
                     py: 0
                 }}>
                     <Typography>Name: {userData?.name}</Typography>
-                    <Typography>Rank: {userData?.rank}</Typography>
+                    <Typography>Rank: {handleRankMaping(userData?.rank)}</Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={handleClose} component={Link} to={"/dashboard/setting/profile"}>
