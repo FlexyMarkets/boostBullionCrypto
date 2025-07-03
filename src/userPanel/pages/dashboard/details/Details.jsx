@@ -65,8 +65,6 @@ function Details() {
 
     const userData = data?.data
 
-    console.log(userData)
-
     const [copied, setCopied] = useState(false);
 
     const handleCopy = (text) => {

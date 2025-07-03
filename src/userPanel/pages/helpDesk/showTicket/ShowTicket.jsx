@@ -11,8 +11,6 @@ function ShowTicket() {
 
     const id = state?.ticketId
 
-    console.log(id)
-
     const dispatch = useDispatch()
 
     const { data, isLoading } = useSupportTicketByIdQuery({ id })

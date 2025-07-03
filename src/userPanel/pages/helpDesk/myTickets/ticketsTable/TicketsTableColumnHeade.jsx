@@ -39,7 +39,6 @@ export const TicketsTableColumnHeade = [
         header: 'Action',
         Cell: ({ row }) => {
             const ticketId = row?.original?._id
-            console.log(ticketId)
             const ticketStatus = row?.original?.status !== "CLOSED"
             return (
                 <Stack sx={{ flexDirection: "row", gap: "10px" }}>

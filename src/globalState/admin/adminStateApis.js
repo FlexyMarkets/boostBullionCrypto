@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const adminStateApis = createApi({
     reducerPath: "adminApis",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://barter.boostbullion.com",
+        baseUrl: "https://user.boostbullion.com/admin",
         prepareHeaders: (headers) => {
             const token = localStorage.getItem("token");
             if (token) {
@@ -12,18 +12,14 @@ export const adminStateApis = createApi({
             return headers;
         }
     }),
-    tagTypes: ["transactionList", "pendingTransactionList"],
+    tagTypes: [],
     endpoints: (builder) => ({
-        addFund: builder.mutation({
-            query: (data) => ({
-                url: "/admin/transaction/deposit/usdt",
-                method: "POST",
-                body: data
-            })
-        }), 
+        getBanner: builder.query({
+            query: () => `/banner`
+        }),
     })
 })
 
 export const {
-   useAddFundMutation
+    useGetBannerQuery
 } = adminStateApis;

@@ -27,6 +27,7 @@ import { setNotification } from "../../../globalState/notification/notificationS
 import { useDispatch } from "react-redux";
 import PersonIcon from '@mui/icons-material/Person';
 import { removeUserData } from "../../../globalState/auth/authSlice";
+import { setBanner } from "../../../globalState/admin/adminStateSlice";
 
 
 function SignIn() {
@@ -59,6 +60,7 @@ function SignIn() {
             if (response?.status) {
                 dispatch(setNotification({ open: true, message: response?.message, severity: "success" }));
                 navigate("/dashboard")
+                dispatch(setBanner(true))
                 dispatch(removeUserData())
             }
 
