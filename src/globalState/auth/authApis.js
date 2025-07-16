@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { login, setUserData, setTempToken } from "./authSlice";
-import { setRole } from "../admin/adminStateSlice";
+import { login, setUserData, setTempToken, setTokenExpTime } from "./authSlice";
+import { jwtDecode } from "jwt-decode";
 
 export const authApi = createApi({
     reducerPath: "authApi",
@@ -44,7 +44,11 @@ export const authApi = createApi({
                 try {
                     const { data } = await queryFulfilled;
                     if (data?.data) {
+
+                        const decoded = jwtDecode(data?.data?.token);
+
                         dispatch(login(data?.data?.token));
+                        dispatch(setTokenExpTime(decoded?.exp))
                     }
                 } catch (error) {
                     console.error("Login failed:", error);

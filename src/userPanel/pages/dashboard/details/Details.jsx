@@ -82,7 +82,7 @@ function Details() {
 
     const profileData = {
         avatar: "/avatar.png",
-        name: userData?.name || "Aditya Shaw",
+        name: userData?.name,
         rank: `Rank - ${handleRankMaping(userData?.rank)}`
     }
 
@@ -162,10 +162,10 @@ function Details() {
                     <Grid item size={matches ? 12 : 6}>
                         <Avatar alt="Cindy Baker" src={profileData.avatar} sx={{ border: "1px solid black", mb: ".5rem" }} />
                         <Typography variant="h5" fontWeight="bold">
-                            {isLoading ? <Skeleton width={200} height={30} /> : profileData.name || 0}
+                            {isLoading ? <Skeleton width={200} height={30} /> : profileData.name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary">
-                            {isLoading ? <Skeleton width={200} height={30} /> : profileData.rank || 0}
+                            {isLoading ? <Skeleton width={200} height={30} /> : profileData.rank}
                         </Typography>
                     </Grid>
                     <Grid item size={matches ? 12 : 6} textAlign={matches ? "left" : "right"}>

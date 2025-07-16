@@ -20,6 +20,7 @@ import { setBanner } from "./globalState/admin/adminStateSlice.js";
 import ModalComponent from "./userPanel/userPanelComponent/ModalComponent.jsx";
 import { useGetBannerQuery } from "./globalState/admin/adminStateApis.js";
 import BannerContent from "./userPanel/pages/BannerContent.jsx";
+import TokenExpiryHandler from "./userPanel/userPanelComponent/TokenExpiryHandler.jsx";
 
 function App() {
 
@@ -51,6 +52,8 @@ function App() {
 
   return (
     <BrowserRouter>
+
+      <TokenExpiryHandler />
 
       {(banner && bannerData) && (
         <ModalComponent

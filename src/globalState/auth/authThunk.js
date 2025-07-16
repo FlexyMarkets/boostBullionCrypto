@@ -1,4 +1,4 @@
-import { logout } from './authSlice';
+import { logout, setTokenExpTime } from './authSlice';
 import {
     removeCreatedTime,
     removeDepositQRData,
@@ -6,6 +6,7 @@ import {
     removePaymentLoading,
     setHasTimedOut
 } from '../paymentState/paymentStateSlice';
+import { setBanner } from '../admin/adminStateSlice';
 
 export const logoutThunk = () => (dispatch) => {
     dispatch(logout());
@@ -14,5 +15,7 @@ export const logoutThunk = () => (dispatch) => {
     dispatch(removeCreatedTime());
     dispatch(removeExpireTime());
     dispatch(removePaymentLoading());
+    dispatch(setBanner(false))
     dispatch(setHasTimedOut(true));
+    dispatch(setTokenExpTime(null))
 };
