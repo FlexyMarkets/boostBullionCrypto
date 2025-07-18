@@ -18,4 +18,5 @@ export const logoutThunk = () => (dispatch) => {
     dispatch(setBanner(false))
     dispatch(setHasTimedOut(true));
     dispatch(setTokenExpTime(null))
+    dispatch(setBanner(false))
 };

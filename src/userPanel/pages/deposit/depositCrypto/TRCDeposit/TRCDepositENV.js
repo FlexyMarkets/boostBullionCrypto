@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 import { removeDepositQRData, removePaymentLoading, removeCreatedTime, removeExpireTime, setCreatedTime, setDepositQRData, setExpireTime, setHasTimedOut } from '../../../../../globalState/paymentState/paymentStateSlice';
 import { setNotification } from '../../../../../globalState/notification/notificationSlice';
 
-export async function initiateSocketConnection({ token, network, amount, dispatch }) {
+export async function initiateSocketConnection({ token, network, amount, dispatch, onLogout, currentUserId }) {
 
     return new Promise((resolve, reject) => {
         const socket = io('https://user.boostbullion.com', {
@@ -15,7 +15,10 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
         socket.connect();
 
         socket.on('connect', () => {
-            socket.emit('startPayment', { network, amount });
+            // console.log('✅ Connected');
+            if (network && amount) {
+                socket.emit('startPayment', { network, amount });
+            }
         });
 
         socket.on('paymentReady', (data) => {
@@ -36,6 +39,14 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
             resolve(data);
             // socket.disconnect();
         });
+
+        socket.on("logOut", (data) => {
+            // console.log('🚨 logOut event received:', data);
+            resolve(data)
+            if (onLogout) {
+                onLogout(data, currentUserId);
+            }
+        })
 
         // socket.on('connect_error', (err) => {
         //     console.error('Connection error:', err);
