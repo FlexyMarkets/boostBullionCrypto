@@ -28,7 +28,6 @@ function StakingInTLCForm() {
 
     return (
         <Stack mt={"2rem"}>
-            <Container>
                 <Card
                     sx={{
                         boxShadow: "0 0px 0px 0 rgba(0, 0, 0, 0.19), 0 0px 8px 0 rgba(0, 0, 0, 0.19)",
@@ -127,7 +126,6 @@ function StakingInTLCForm() {
                         }}
                     >Submit</Button>
                 </Card>
-            </Container>
         </Stack>
     )
 }

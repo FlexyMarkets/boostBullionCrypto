@@ -8,7 +8,6 @@ function StakingInTLCSubscription() {
 
     return (
         <Stack>
-            <Container>
                 <Card
                     sx={{
                         p: "2rem",
@@ -45,7 +44,6 @@ function StakingInTLCSubscription() {
                         <Typography>{stakingInTLCSubscriptionData.contant}</Typography>
                     </Stack>
                 </Card>
-            </Container>
         </Stack>
     )
 }

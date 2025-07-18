@@ -4,7 +4,7 @@ import StackingMatchingIncomeTable from './stackingMatchingIncomeTable/StackingM
 function StackingMatchingIncome() {
     return (
         <Stack  mt={"100px"}>
-            <Container><Typography variant="h4" fontWeight="bold" mb={"2rem"}>Staking Matching Income</Typography></Container>
+            <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Staking Matching Income</Typography>
             <StackingMatchingIncomeTable />
         </Stack>
     )

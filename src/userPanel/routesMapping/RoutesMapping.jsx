@@ -10,7 +10,6 @@ const UniLevel = lazy(() => import("../pages/network/uniLevel/UniLevel"));
 const BusinessHistory = lazy(() => import("../pages/network/businessHistory/BusinessHistory"));
 const LevelIncome = lazy(() => import("../pages/income/levelIncome/LevelIncome"));
 const MatchingIncome = lazy(() => import("../pages/income/matchingIncome/MatchingIncome"));
-const StackingMatchingIncome = lazy(() => import("../pages/income/stackingMatchingIncome/StackingMatchingIncome"));
 const IBIncome = lazy(() => import("../pages/income/IBIncome/IBIncome"));
 const AchievementIncome = lazy(() => import("../pages/income/achievementIncome/AchievementIncome"));
 const CompoundingIncome = lazy(() => import("../pages/income/compoundingIncome/CompoundingIncome"));
@@ -28,10 +27,11 @@ const Portfolio = lazy(() => import("../pages/robot/portfolio/Portfolio"));
 const TradingToCompounding = lazy(() => import("../pages/robot/portfolio/tradingPortfolio/TradingToCompounding/TradingToCompounding"));
 const StakingInTLC = lazy(() => import("../pages/staking/stakingInTLC/StakingInTLC"));
 const StakingIncome = lazy(() => import("../pages/staking/stakingIncome/StakingIncome"));
-// const TLCTwoPointOICO = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOICO/TLCTwoPointOICO"));
-// const TLCTwoPointOICOLevelIncome = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOICOLevelIncome/TLCTwoPointOICOLevelIncome"));
-// const TLCTwoPointOLevelIncome = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOLevelIncome/TLCTwoPointOLevelIncomeTotal"));
-// const TLCTwoPointOProfit = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOProfit/TLCTwoPointOProfit"));
+const StackingMatchingIncome = lazy(() => import("../pages/income/stackingMatchingIncome/StackingMatchingIncome"));
+const TLCTwoPointOICO = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOICO/TLCTwoPointOICO"));
+const TLCTwoPointOICOLevelIncome = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOICOLevelIncome/TLCTwoPointOICOLevelIncome"));
+const TLCTwoPointOLevelIncome = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOLevelIncome/TLCTwoPointOLevelIncomeTotal"));
+const TLCTwoPointOProfit = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOProfit/TLCTwoPointOProfit"));
 const DepositCrypto = lazy(() => import("../pages/deposit/depositCrypto/DepositCrypto"));
 const DepositINRPackage = lazy(() => import("../pages/deposit/depositINRPackage/DepositINRPackage"));
 const DepositInvoices = lazy(() => import("../pages/deposit/depositInvoices/DepositInvoices"));
@@ -106,10 +106,10 @@ export const routing = [
     // { path: "staking/staking-in-TLC", element: <StakingInTLC /> },
     // { path: "staking/staking-income", element: <StakingIncome /> },
     // { path: "staking/staking-matching-income", element: <StackingMatchingIncome /> },
-    // { path: "TLC2.0/TLC2.0-ICO", element: <TLCTwoPointOICO /> },
-    // { path: "TLC2.0/TLC2.0-ICO-level-income", element: <TLCTwoPointOICOLevelIncome /> },
-    // { path: "TLC2.0/TLC2.0-level-income", element: <TLCTwoPointOLevelIncome /> },
-    // { path: "TLC2.0/TLC2.0-profit", element: <TLCTwoPointOProfit /> },
+    // { path: "BBM/BBM-ICO", element: <TLCTwoPointOICO /> },
+    // { path: "BBM/BBM-ICO-level-income", element: <TLCTwoPointOICOLevelIncome /> },
+    // { path: "BBM/BBM-level-income", element: <TLCTwoPointOLevelIncome /> },
+    // { path: "BBM/BBM-profit", element: <TLCTwoPointOProfit /> },
     { path: "wallet/deposit", element: <DepositCrypto /> },
     // { path: "wallet/addFund", element: <AddFund /> },
     { path: "wallet/withdraw", element: <WithdrawAmount /> },

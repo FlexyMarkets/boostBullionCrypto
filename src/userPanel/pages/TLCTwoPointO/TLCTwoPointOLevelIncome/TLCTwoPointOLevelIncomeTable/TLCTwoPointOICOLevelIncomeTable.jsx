@@ -5,12 +5,12 @@ import Container from '@mui/material/Container';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TablePaginationComponent from '../../../../userPanelComponent/TablePaginationComponent';
-import StakingIncomeTableToolbar from './stakingIncomeTableToolbar/StakingIncomeTableToolbar';
-import StakingIncomeTableRow from './stakingIncomeTableRow/StakingIncomeTableRow';
-import StakingIncomeTableHead from './stakingIncomeTableHead/StakingIncomeTableHead';
+import TLCTwoPointOLevelIncomeTableRow from "./TLCTwoPointOLevelIncomeTableRow/TLCTwoPointOLevelIncomeTableRow"
+import TLCTwoPointOLevelIncomeTableHead from "./TLCTwoPointOLevelIncomeTableHead/TLCTwoPointOLevelIncomeTableHead"
+import TLCTwoPointOLevelIncomeTableToolbar from "./TLCTwoPointOLevelIncomeTableToolbar/TLCTwoPointOLevelIncomeTableToolbar"
 
 
-function StakingIncomeTable() {
+function TLCTwoPointOICOLevelIncomeTable() {
 
     return (
         <Stack mt={"2rem"}>
@@ -21,12 +21,12 @@ function StakingIncomeTable() {
                     padding: { xs: "1rem", md: "2rem" }
                 }}
             >
-                <StakingIncomeTableToolbar />
+                <TLCTwoPointOLevelIncomeTableToolbar />
                 <TableContainer>
                     <Table sx={{ minWidth: 800 }}>
-                        <StakingIncomeTableHead />
+                        <TLCTwoPointOLevelIncomeTableHead />
                         <TableBody>
-                            <StakingIncomeTableRow />
+                            <TLCTwoPointOLevelIncomeTableRow />
                         </TableBody>
                     </Table>
                 </TableContainer>
@@ -36,4 +36,4 @@ function StakingIncomeTable() {
     );
 }
 
-export default StakingIncomeTable;
+export default TLCTwoPointOICOLevelIncomeTable;

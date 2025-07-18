@@ -5,15 +5,15 @@ import Container from '@mui/material/Container';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TablePaginationComponent from '../../../../userPanelComponent/TablePaginationComponent';
-import StakingMatchingIncomeTableToolbar from './stakingMatchingIncomeTableToolbar/StakingMatchingIncomeTableToolbar';
-import StakingMatchingIncomeTableHead from './stakingMatchingIncomeTableHead/StakingMatchingIncomeTableHead';
-import StakingMatchingIncomeTableRow from './stakingMatchingIncomeTableRow/StakingMatchingIncomeTableRow';
+import TLCTwoPointOICOTableHead from "./TLCTwoPointOICOTableHead/TLCTwoPointOICOTableHead"
+import TLCTwoPointOICOTableRow from "./TLCTwoPointOICOTableRow/TLCTwoPointOICOTableRow"
+import TLCTwoPointOICOTableToolbar from "./TLCTwoPointOICOTableToolbar/TLCTwoPointOICOTableToolbar"
 
 
-function StakingMatchingIncomeTable() {
+function TLCTwoPointOICOTable() {
 
     return (
-        <Stack>
+        <Stack mt={"2rem"}>
                 <Card
                     sx={{
                         boxShadow: "0 0px 0px 0 rgba(0, 0, 0, 0.19), 0 0px 8px 0 rgba(0, 0, 0, 0.19)",
@@ -21,12 +21,12 @@ function StakingMatchingIncomeTable() {
                         padding: { xs: "1rem", md: "2rem" }
                     }}
                 >
-                    <StakingMatchingIncomeTableToolbar />
+                    <TLCTwoPointOICOTableToolbar />
                     <TableContainer>
                         <Table sx={{ minWidth: 800 }}>
-                            <StakingMatchingIncomeTableHead />
+                            <TLCTwoPointOICOTableHead />
                             <TableBody>
-                                <StakingMatchingIncomeTableRow />
+                                <TLCTwoPointOICOTableRow />
                             </TableBody>
                         </Table>
                     </TableContainer>
@@ -36,4 +36,4 @@ function StakingMatchingIncomeTable() {
     );
 }
 
-export default StakingMatchingIncomeTable;
+export default TLCTwoPointOICOTable;

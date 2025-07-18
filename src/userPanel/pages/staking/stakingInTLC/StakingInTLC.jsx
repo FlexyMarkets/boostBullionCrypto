@@ -7,7 +7,7 @@ import StakingInTLCTable from './stakingInTLCTable/StakingInTLCTable';
 function StakingInTLC() {
   return (
     <Stack  mt={"100px"}>
-      <Container><Typography variant="h4" fontWeight="bold" mb={"2rem"}>Staking in TLC</Typography></Container>
+      <Typography variant="h4" fontWeight="bold" mb={"2rem"}>Staking in TLC</Typography>
       <StakingInTLCSubscription />
       <StakingInTLCWallet />
       <StakingInTLCForm />

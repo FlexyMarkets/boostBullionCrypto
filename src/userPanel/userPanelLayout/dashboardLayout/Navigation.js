@@ -217,27 +217,27 @@ export const AdminNAVIGATION = [
     //     ],
     // },
     // {
-    //     title: 'TLC2.0',
+    //     title: 'BBM',
     //     icon: TrackChangesIcon,
     //     children: [
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-ICO',
-    //             title: 'TLC2.0 ICO',
+    //             segment: '/dashboard/BBM/BBM-ICO',
+    //             title: 'BBM ICO',
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-ICO-level-income',
-    //             title: 'TLC2.0 ICO Level Income',
+    //             segment: '/dashboard/BBM/BBM-ICO-level-income',
+    //             title: 'BBM ICO Level Income',
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-level-income',
-    //             title: 'TLC2.0 Level Income',
+    //             segment: '/dashboard/BBM/BBM-level-income',
+    //             title: 'BBM Level Income',
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-profit',
-    //             title: 'TLC2.0 Profit',
+    //             segment: '/dashboard/BBM/BBM-profit',
+    //             title: 'BBM Profit',
     //             icon: CircleOutlinedIcon,
     //         }
     //     ],
@@ -624,27 +624,27 @@ export const userNavigation = [
     //     ],
     // },
     // {
-    //     title: 'TLC2.0',
+    //     title: 'BBM',
     //     icon: TrackChangesIcon,
     //     children: [
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-ICO',
-    //             title: 'TLC2.0 ICO',
+    //             segment: '/dashboard/BBM/BBM-ICO',
+    //             title: 'BBM ICO',
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-ICO-level-income',
-    //             title: 'TLC2.0 ICO Level Income',
+    //             segment: '/dashboard/BBM/BBM-ICO-level-income',
+    //             title: 'BBM ICO Level Income',
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-level-income',
-    //             title: 'TLC2.0 Level Income',
+    //             segment: '/dashboard/BBM/BBM-level-income',
+    //             title: 'BBM Level Income',
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/TLC2.0/TLC2.0-profit',
-    //             title: 'TLC2.0 Profit',
+    //             segment: '/dashboard/BBM/BBM-profit',
+    //             title: 'BBM Profit',
     //             icon: CircleOutlinedIcon,
     //         }
     //     ],
