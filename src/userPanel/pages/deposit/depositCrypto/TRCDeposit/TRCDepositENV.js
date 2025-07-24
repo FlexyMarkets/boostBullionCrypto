@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 import { removeDepositQRData, removePaymentLoading, removeCreatedTime, removeExpireTime, setCreatedTime, setDepositQRData, setExpireTime, setHasTimedOut } from '../../../../../globalState/paymentState/paymentStateSlice';
 import { setNotification } from '../../../../../globalState/notification/notificationSlice';
 
-export async function initiateSocketConnection({ token, network, amount, dispatch, onLogout, currentUserId }) {
+export async function initiateSocketConnection({ token, network, amount, walletType, dispatch, onLogout, currentUserId }) {
 
     return new Promise((resolve, reject) => {
         const socket = io('https://user.boostbullion.com', {
@@ -16,8 +16,8 @@ export async function initiateSocketConnection({ token, network, amount, dispatc
 
         socket.on('connect', () => {
             // console.log('✅ Connected');
-            if (network && amount) {
-                socket.emit('startPayment', { network, amount });
+            if (network && amount && walletType) {
+                socket.emit('startPayment', { network, amount, walletType });
             }
         });
 

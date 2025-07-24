@@ -11,6 +11,7 @@ import { adminStateApis } from './admin/adminStateApis';
 import { supportStateApis } from "./supportState/supportStateApis"
 import adminStateSlice from "./admin/adminStateSlice"
 import paymentStateSlice from "./paymentState/paymentStateSlice"
+import { BBMApis } from './BBM/BBMApis';
 
 const store = configureStore({
     reducer: {
@@ -25,7 +26,8 @@ const store = configureStore({
         [robotApi.reducerPath]: robotApi.reducer,
         [walletStateApis.reducerPath]: walletStateApis.reducer,
         [adminStateApis.reducerPath]: adminStateApis.reducer,
-        [supportStateApis.reducerPath]: supportStateApis.reducer
+        [supportStateApis.reducerPath]: supportStateApis.reducer,
+        [BBMApis.reducerPath]: BBMApis.reducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware()
         .concat(
@@ -34,7 +36,8 @@ const store = configureStore({
             robotApi.middleware,
             walletStateApis.middleware,
             adminStateApis.middleware,
-            supportStateApis.middleware
+            supportStateApis.middleware,
+            BBMApis.middleware
         )
 });
 

@@ -28,10 +28,10 @@ const TradingToCompounding = lazy(() => import("../pages/robot/portfolio/trading
 const StakingInTLC = lazy(() => import("../pages/staking/stakingInTLC/StakingInTLC"));
 const StakingIncome = lazy(() => import("../pages/staking/stakingIncome/StakingIncome"));
 const StackingMatchingIncome = lazy(() => import("../pages/income/stackingMatchingIncome/StackingMatchingIncome"));
-const TLCTwoPointOICO = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOICO/TLCTwoPointOICO"));
-const TLCTwoPointOICOLevelIncome = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOICOLevelIncome/TLCTwoPointOICOLevelIncome"));
-const TLCTwoPointOLevelIncome = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOLevelIncome/TLCTwoPointOLevelIncomeTotal"));
-const TLCTwoPointOProfit = lazy(() => import("../pages/TLCTwoPointO/TLCTwoPointOProfit/TLCTwoPointOProfit"));
+const BBMICO = lazy(() => import("../pages/BBM/BBMICO/BBMICO"));
+const BBMCoinTransactions = lazy(() => import("../pages/BBM/BBMCoinTransactions/BBMCoinTransactions"));
+const BBMProfit = lazy(() => import("../pages/BBM/BBMProfit/BBMProfit"));
+const BBMSellIncome = lazy(() => import("../pages/BBM/BBMSellIncome/BBMSellIncome"));
 const DepositCrypto = lazy(() => import("../pages/deposit/depositCrypto/DepositCrypto"));
 const DepositINRPackage = lazy(() => import("../pages/deposit/depositINRPackage/DepositINRPackage"));
 const DepositInvoices = lazy(() => import("../pages/deposit/depositInvoices/DepositInvoices"));
@@ -106,10 +106,10 @@ export const routing = [
     // { path: "staking/staking-in-TLC", element: <StakingInTLC /> },
     // { path: "staking/staking-income", element: <StakingIncome /> },
     // { path: "staking/staking-matching-income", element: <StackingMatchingIncome /> },
-    // { path: "BBM/BBM-ICO", element: <TLCTwoPointOICO /> },
-    // { path: "BBM/BBM-ICO-level-income", element: <TLCTwoPointOICOLevelIncome /> },
-    // { path: "BBM/BBM-level-income", element: <TLCTwoPointOLevelIncome /> },
-    // { path: "BBM/BBM-profit", element: <TLCTwoPointOProfit /> },
+    // { path: "BBM/BBM-ICO", element: <BBMICO /> },
+    // { path: "BBM/BBM-Coin-Transactions", element: <BBMCoinTransactions /> },
+    // { path: "BBM/BBM-Sell-Income", element: <BBMSellIncome /> },
+    // { path: "BBM/BBM-profit", element: <BBMProfit /> },
     { path: "wallet/deposit", element: <DepositCrypto /> },
     // { path: "wallet/addFund", element: <AddFund /> },
     { path: "wallet/withdraw", element: <WithdrawAmount /> },

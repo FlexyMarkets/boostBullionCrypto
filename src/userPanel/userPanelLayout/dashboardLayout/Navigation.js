@@ -216,32 +216,32 @@ export const AdminNAVIGATION = [
     //         }
     //     ],
     // },
-    // {
-    //     title: 'BBM',
-    //     icon: TrackChangesIcon,
-    //     children: [
-    //         {
-    //             segment: '/dashboard/BBM/BBM-ICO',
-    //             title: 'BBM ICO',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-ICO-level-income',
-    //             title: 'BBM ICO Level Income',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-level-income',
-    //             title: 'BBM Level Income',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-profit',
-    //             title: 'BBM Profit',
-    //             icon: CircleOutlinedIcon,
-    //         }
-    //     ],
-    // },
+    {
+        title: 'BBM',
+        icon: TrackChangesIcon,
+        children: [
+            {
+                segment: '/dashboard/BBM/BBM-ICO',
+                title: 'BBM ICO',
+                icon: CircleOutlinedIcon,
+            },
+            {
+                segment: '/dashboard/BBM/BBM-Coin-Transactions',
+                title: 'BBM Coin Transactions',
+                icon: CircleOutlinedIcon,
+            },
+            {
+                segment: '/dashboard/BBM/BBM-level-income',
+                title: 'BBM Level Income',
+                icon: CircleOutlinedIcon,
+            },
+            {
+                segment: '/dashboard/BBM/BBM-profit',
+                title: 'BBM Profit',
+                icon: CircleOutlinedIcon,
+            }
+        ],
+    },
     {
         title: 'Wallet',
         icon: AccountBalanceWalletIcon,
@@ -633,18 +633,18 @@ export const userNavigation = [
     //             icon: CircleOutlinedIcon,
     //         },
     //         {
-    //             segment: '/dashboard/BBM/BBM-ICO-level-income',
-    //             title: 'BBM ICO Level Income',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-level-income',
-    //             title: 'BBM Level Income',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
     //             segment: '/dashboard/BBM/BBM-profit',
     //             title: 'BBM Profit',
+    //             icon: CircleOutlinedIcon,
+    //         },
+    //         {
+    //             segment: '/dashboard/BBM/BBM-Coin-Transactions',
+    //             title: 'BBM Coin Transactions',
+    //             icon: CircleOutlinedIcon,
+    //         },
+    //         {
+    //             segment: '/dashboard/BBM/BBM-Sell-Income',
+    //             title: 'BBM Sell Income',
     //             icon: CircleOutlinedIcon,
     //         }
     //     ],
