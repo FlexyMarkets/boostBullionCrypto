@@ -21,6 +21,7 @@ import ModalComponent from "./userPanel/userPanelComponent/ModalComponent.jsx";
 import { useGetBannerQuery } from "./globalState/admin/adminStateApis.js";
 import BannerContent from "./userPanel/pages/BannerContent.jsx";
 import TokenExpiryHandler from "./userPanel/userPanelComponent/TokenExpiryHandler.jsx";
+import BBMLanding from "./landing/BBMLanding.jsx";
 
 function App() {
 
@@ -79,6 +80,7 @@ function App() {
       <Suspense fallback={<Loading mt={"20rem"} />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          {/* <Route path="/BBM" element={<BBMLanding />} /> */}
           <Route
             path="/signin"
             element={

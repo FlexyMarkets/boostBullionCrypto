@@ -12,7 +12,7 @@ export const BBMApis = createApi({
             return headers;
         }
     }),
-    // tagTypes: ["bankDetails", "userProfile"],
+    tagTypes: ["burnTokenList"],
     endpoints: (builder) => ({
         burnToken: builder.mutation({
             query: (data) => ({
@@ -20,7 +20,7 @@ export const BBMApis = createApi({
                 method: "POST",
                 body: data
             }),
-            // invalidatesTags: ["userProfile"]
+            invalidatesTags: [{ type: "burnTokenList", id: "PARTIAL-LIST" }]
         }),
         sellToken: builder.mutation({
             query: (data) => ({
@@ -30,28 +30,43 @@ export const BBMApis = createApi({
             }),
             // invalidatesTags: ["userProfile"]
         }),
-        // getTransactionData: builder.query({
-        //     query: ({ page = 1, sizePerPage = 10, status = "", transactionType = "" }) => {
-        //         const params = new URLSearchParams();
-        //         params.append("page", page);
-        //         params.append("sizePerPage", sizePerPage);
-        //         if (status) params.append("status", status);
-        //         if (transactionType) params.append("transactionType", transactionType);
+        burnTokenList: builder.query({
+            query: ({ page = 1, sizePerPage = 10, 
+                // status, transactionType, startDate, endDate
+             }) => {
+                const params = {};
+                if (page > 0) params.page = page;
+                if (sizePerPage > 0) params.sizePerPage = sizePerPage;
+                // if (status) params.status = status;
+                // if (transactionType) params.transactionType = transactionType;
+                // if (startDate) params.startDate = startDate;
+                // if (endDate) params.endDate = endDate;
 
-        //         return `transaction/list?${params.toString()}`;
-        //     }
-        // }),
-        // getUserProfile: builder.query({
-        //     query: () => `/profile`,
-        //     providesTags: ["userProfile"]
-        // }),
-        // getReferralList: builder.query({
-        //     query: () => `/profile/referral/list`
-        // }),
+                return {
+                    url: "/burn/token/list",
+                    params,
+                };
+            },
+
+            providesTags: (result) => {
+                const data = result?.data?.usersList || []
+                return data.length > 0
+                    ?
+                    [
+                        ...data.map(({ id }) => ({ type: 'burnTokenList', id })),
+                        { type: 'burnTokenList', id: 'PARTIAL-LIST' },
+                    ]
+                    :
+                    [{ type: 'burnTokenList', id: 'PARTIAL-LIST' }]
+            },
+            keepUnusedDataFor: 60,
+            refetchOnMountOrArgChange: true,
+        }),
     })
 })
 
 export const {
     useBurnTokenMutation,
-    useSellTokenMutation
+    useSellTokenMutation,
+    useBurnTokenListQuery
 } = BBMApis;

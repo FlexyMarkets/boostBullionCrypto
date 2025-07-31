@@ -1,7 +1,10 @@
 import { Container, Stack, Typography, useMediaQuery } from "@mui/material"
 import { heroBannerData } from "./heroBannerData";
+import { useLocation } from "react-router-dom";
 
 function HeroBanner() {
+
+    const { pathname } = useLocation()
 
     const matches = useMediaQuery('(min-width:600px)');
 
@@ -28,7 +31,7 @@ function HeroBanner() {
             <Container sx={{ position: "absolute", inset: 0, display: "flex", alignItems: "center" }}>
                 <Stack>
                     {
-                        heroBannerData.map((ele, i) => (
+                        heroBannerData(pathname).map((ele, i) => (
                             <Stack key={i} color="white" width={{ sm: "80%", md: "50%" }}>
                                 <Typography variant="h4" fontSize={"3.5rem"} fontWeight={"700"} color="#fce196">{ele.heading}</Typography>
                                 <Typography fontSize={"1.2rem"}>{ele.contant}</Typography>

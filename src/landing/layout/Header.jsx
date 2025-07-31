@@ -10,10 +10,12 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function Header({ aboutRef, servicesRef, contactRef }) {
+
+    const { pathname } = useLocation()
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [isBgcolor, setisBgcolor] = useState(false);
@@ -24,6 +26,7 @@ function Header({ aboutRef, servicesRef, contactRef }) {
     const pages = [
         { name: 'Services', ref: 'servicesRef' },
         { name: 'About Us', ref: 'aboutRef' },
+        // { name: 'BBM', link: "/BBM" },
         { name: 'Contact Us', ref: 'contactRef' }
     ];
 
@@ -31,6 +34,7 @@ function Header({ aboutRef, servicesRef, contactRef }) {
         { name: 'Services', ref: 'servicesRef' },
         { name: 'About Us', ref: 'aboutRef' },
         { name: 'Contact Us', ref: 'contactRef' },
+        // { name: 'BBM', link: "/BBM" },
         token
             ? { link: "/dashboard", name: 'Dashboard', ref: null }
             : { link: "/signin", name: 'Sign in', ref: null },
@@ -77,7 +81,11 @@ function Header({ aboutRef, servicesRef, contactRef }) {
                     <Box
                         sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: "center", alignItems: "center" }}
                     >
-                        <img src='/logo512.png' alt='error' style={{ width: "5rem" }} />
+                        <img
+                            src={pathname === "/BBM" ? '/BBMCoin.png' : "/logo512.png"}
+                            alt='error'
+                            style={{ width: pathname === "/BBM" ? "3rem" : "5rem" }}
+                        />
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton size="large" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu}>
@@ -126,6 +134,10 @@ function Header({ aboutRef, servicesRef, contactRef }) {
                     >
                         {pages.map((page) => (
                             <Typography
+                                component={page?.link && Link}
+                                to={page.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 key={page.name}
                                 onClick={() => handleScrollToSection(page.ref === 'aboutRef' ? aboutRef : page.ref === 'servicesRef' ? servicesRef : contactRef)}
                                 sx={{
@@ -134,7 +146,8 @@ function Header({ aboutRef, servicesRef, contactRef }) {
                                     color: isBgcolor ? 'black' : 'white',
                                     display: 'block',
                                     textTransform: "capitalize",
-                                    cursor: "pointer"
+                                    cursor: "pointer",
+                                    textDecoration: "none",
                                 }}
                             >
                                 {page.name}
