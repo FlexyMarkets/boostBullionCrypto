@@ -19,9 +19,9 @@ export const BBMCoinKeyFeaturesData = [
         heading: "Real Use Cases",
         contant: "Use BBM Coin in digital bullion trading, peer-to-peer payments, DeFi, staking, and more."
     },
-    // {
-    //     icon: "carbon:strategy-play",
-    //     heading: "Community Focused",
-    //     contant: "We believe in community-first development—our token holders help shape the future."
-    // }
+    {
+        icon: "carbon:strategy-play",
+        heading: "Community Focused",
+        contant: "We believe in community-first development—our token holders help shape the future."
+    }
 ]

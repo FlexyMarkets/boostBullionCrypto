@@ -1,4 +1,4 @@
-import { Button, Container, Stack, Typography } from "@mui/material"
+import { Box, Container, Stack, Typography } from "@mui/material"
 import Grid from "@mui/material/Grid2"
 // import { aboutData } from "./aboutData"
 // import { Icon } from '@iconify/react';
@@ -13,25 +13,22 @@ function WhatIsBBMCoin() {
                 <Grid container size={12} spacing={{ xs: 5, md: 8, lg: 20 }}>
                     <Grid
                         size={{ xs: 12, md: 6 }}
-                        height={{ xs: "20rem", md: "auto" }}
                         sx={{
                             borderRadius: { md: "1rem 5rem 1rem 5rem" },
                             overflow: "hidden",
-                            animation: `${verticalMove} 1s infinite alternate`
+                            animation: `${verticalMove} 1s infinite alternate`,
+                            display: "flex",
+                            justifyContent: { xs: "center", md: "flex-start" }
                         }}
                     >
-                        <img
-                            // src={data.img}
-                            alt="error"
-                            style={{
-                                width: "100%",
-                                height: "100%"
-                            }}
+                        <Box
+                            component={"img"}
+                            src="/BBMCoin.png"
+                            width={"80%"}
                         />
                     </Grid>
                     <Grid size={{ xs: 12, md: 6 }} display={"flex"} flexDirection={"column"} gap={".8rem"} justifyContent={"center"} py={"2rem"}>
                         <Fade triggerOnce>
-                            {/* <Typography fontWeight={"700"} fontSize={"1.2rem"} color="#f1b811">{data.kind}</Typography> */}
                             <Typography variant="h1" fontWeight={"700"} fontSize={"1.5rem"}>
                                 What is BBM Coin?
                             </Typography>

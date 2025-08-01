@@ -16,7 +16,7 @@ function Achivement() {
     });
 
     return (
-        <Stack bgcolor={"#f5e2b0"} my={"8rem"} py={"1rem"}>
+        <Stack my={"8rem"} py={"1rem"}>
             <Container>
                 <Grid container spacing={4}>
                     {achivementData.map((ele, i) => (

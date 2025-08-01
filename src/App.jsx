@@ -80,7 +80,7 @@ function App() {
       <Suspense fallback={<Loading mt={"20rem"} />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          {/* <Route path="/BBM" element={<BBMLanding />} /> */}
+          <Route path="/BBM" element={<BBMLanding />} />
           <Route
             path="/signin"
             element={

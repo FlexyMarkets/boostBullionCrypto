@@ -13,6 +13,7 @@ import WhyChooseUs from "./Components/whyChooseUs/WhyChooseUs.jsx";
 import Whymt5 from "./Components/whymt5/Whymt5.jsx";
 import Footer from "./layout/Footer.jsx";
 import Header from "./layout/Header.jsx";
+import Hero from "./Components/Hero/Hero.jsx";
 
 function LandingPage() {
     const aboutRef = useRef(null);
@@ -22,13 +23,13 @@ function LandingPage() {
     return (
         <>
             <Header aboutRef={aboutRef} servicesRef={servicesRef} contactRef={contactRef} />
-            <HeroBanner />
+            <Hero />
             <div ref={servicesRef}><Services /></div>
             <div ref={aboutRef}><About /></div>
             <WhyChooseUs />
             <Experience />
             <Whymt5 />
-            <Achivement />
+            {/* <Achivement /> */}
             <BestMT5 />
             <Pricing />
             <Testimonials />

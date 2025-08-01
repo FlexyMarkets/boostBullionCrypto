@@ -59,3 +59,41 @@ export const searchableDropdownStyle = {
         },
     },
 }
+
+export const baseInputOverrides = {
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "white",
+  },
+  "&:hover .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#f1b811",
+  },
+  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#f1b811",
+  },
+
+  "& .MuiInputBase-input": {
+    color: "white",
+    caretColor: "white",
+    backgroundColor: "transparent",
+  },
+
+  "& textarea": {
+    color: "white",
+    caretColor: "white",
+    backgroundColor: "transparent",
+  },
+
+  "& input:-webkit-autofill": {
+    WebkitTextFillColor: "white !important",
+    WebkitBoxShadow: "0 0 0 1000px transparent inset !important",
+    backgroundColor: "transparent !important",
+    transition: "background-color 5000s ease-in-out 0s",
+    caretColor: "white",
+  },
+  "& input:-webkit-autofill:hover, & input:-webkit-autofill:focus, & input:-webkit-autofill:active": {
+    WebkitTextFillColor: "white !important",
+    WebkitBoxShadow: "0 0 0 1000px transparent inset !important",
+    backgroundColor: "transparent !important",
+    caretColor: "white",
+  },
+};
