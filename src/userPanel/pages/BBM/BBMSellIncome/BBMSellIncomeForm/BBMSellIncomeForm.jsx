@@ -1,4 +1,4 @@
-import { Button, Card, Checkbox, Stack, Typography, Divider, Container, TextField, InputLabel, OutlinedInput, IconButton, InputAdornment, useMediaQuery } from '@mui/material'
+import { Button, Card, Checkbox, Stack, Typography, Divider, Container, TextField, InputLabel, OutlinedInput, IconButton, InputAdornment, useMediaQuery, Box } from '@mui/material'
 import { useState } from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -11,6 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useDispatch } from "react-redux"
 import { setNotification } from "../../../../../globalState/notification/notificationSlice"
 import { useGetUserProfileQuery } from "../../../../../globalState/settings/profileSettingApi"
+import { Watch } from '@mui/icons-material';
 
 function BBMSellIncomeForm() {
 
@@ -26,7 +27,7 @@ function BBMSellIncomeForm() {
 
     const defaultValues = {
         // wallet: "",
-        // amount: "",
+        amount: "",
         password: ""
     };
 
@@ -65,7 +66,7 @@ function BBMSellIncomeForm() {
                 component={"form"}
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <Typography mx={{ xs: "1rem", md: "0" }}>Sell BBM ICO Token (@ $2/token)</Typography>
+                <Typography mx={{ xs: "1rem", md: "0" }}>Sell BBM ICO Token (@ $0.1/token)</Typography>
                 <Divider sx={{ my: "1.2rem" }} />
                 <Grid container size={12} spacing={3}>
                     {/* <Grid item size={{ xs: 12, sm: 6 }}>
@@ -73,8 +74,12 @@ function BBMSellIncomeForm() {
                         <Selector items={["Coin wallet"]} shouldBeFullWidth={true} />
                     </Grid> */}
                     <Grid item size={{ xs: 12, sm: 6 }}>
-                        <InputLabel sx={{ mb: ".5rem" }}>Token</InputLabel>
-                        <TextField disabled={true} value={totalTokenToSell} size='small' fullWidth placeholder="Enter token" variant="outlined" />
+                        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                            <InputLabel sx={{ mb: ".5rem" }}>Token</InputLabel>
+                            <InputLabel sx={{ mb: ".5rem" }}>$ {totalTokenToSell}</InputLabel>
+                        </Box>
+                        <TextField  {...register("amount", { require: true })} size='small' fullWidth placeholder="Enter token ($)" variant="outlined" />
+                        {errors.amount && <Typography color="error">{errors.amount.message}</Typography>}
                     </Grid>
                     <Grid item size={{ xs: 12, sm: 6 }}>
                         <InputLabel sx={{ mb: ".5rem" }}>Transaction Password</InputLabel>

@@ -60,7 +60,7 @@ function BBMICOForm() {
                 component={"form"}
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <Typography mx={{ xs: "1rem", md: "0" }}>Burn BBM ICO Token (@ $2/token)</Typography>
+                <Typography mx={{ xs: "1rem", md: "0" }}>Burn BBM ICO Token (@ $ 0.1/token)</Typography>
                 <Divider sx={{ my: "1.2rem" }} />
                 <Grid container size={12} spacing={3}>
                     {/* <Grid item size={{ xs: 12, sm: 6 }}>
@@ -69,7 +69,7 @@ function BBMICOForm() {
                     </Grid> */}
                     <Grid item size={{ xs: 12, sm: 6 }}>
                         <InputLabel sx={{ mb: ".5rem" }}>Amount($)</InputLabel>
-                        <TextField {...register("amount", { require: true })} size='small' fullWidth placeholder="Enter Amount($)" variant="outlined" />
+                        <TextField {...register("amount", { require: true })} size='small' fullWidth placeholder="Enter Amount ($)" variant="outlined" />
                         {errors.amount && <Typography color="error">{errors.amount.message}</Typography>}
                     </Grid>
                     <Grid item size={{ xs: 12, sm: 6 }}>

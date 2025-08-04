@@ -36,7 +36,7 @@ function BBMSellIncomeWallet() {
                 <CardContent key={i} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <Stack sx={{ flexDirection: "column", gap: ".5rem" }}>
                     <Typography sx={{ fontSize: "1.2rem" }}>{isLoading ? <Skeleton /> : data.walletHeading}</Typography>
-                    <Typography sx={{ fontSize: "1.5rem" }}>{isLoading ? <Skeleton /> : data.walletBalance}</Typography>
+                    <Typography sx={{ fontSize: "1.5rem" }}>{isLoading ? <Skeleton /> : `$ ${data.walletBalance}`}</Typography>
                   </Stack>
                   <Typography><data.icon sx={{ fontSize: "5rem", color: "primary.main" }} /></Typography>
                 </CardContent>

@@ -10,8 +10,8 @@ function BBMSellIncome() {
       <Typography variant="h4" fontWeight="bold">BBM sell token</Typography>
       <BBMSellIncomeWallet />
       <BBMSellIncomeForm />
-      <BBMSellIncomeTotal />
-      <BBMSellIncomeTable />
+      {/* <BBMSellIncomeTotal /> */}
+      {/* <BBMSellIncomeTable /> */}
     </Stack>
   )
 }

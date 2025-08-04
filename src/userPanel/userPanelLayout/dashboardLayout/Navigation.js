@@ -623,32 +623,32 @@ export const userNavigation = [
     //         }
     //     ],
     // },
-    // {
-    //     title: 'BBM',
-    //     icon: TrackChangesIcon,
-    //     children: [
-    //         {
-    //             segment: '/dashboard/BBM/BBM-ICO',
-    //             title: 'BBM ICO',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-profit',
-    //             title: 'BBM Profit',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-Coin-Transactions',
-    //             title: 'BBM Coin Transactions',
-    //             icon: CircleOutlinedIcon,
-    //         },
-    //         {
-    //             segment: '/dashboard/BBM/BBM-Sell-Income',
-    //             title: 'BBM Sell Income',
-    //             icon: CircleOutlinedIcon,
-    //         }
-    //     ],
-    // },
+    {
+        title: 'BBM',
+        icon: TrackChangesIcon,
+        children: [
+            {
+                segment: '/dashboard/BBM/BBM-ICO',
+                title: 'BBM ICO',
+                icon: CircleOutlinedIcon,
+            },
+            // {
+            //     segment: '/dashboard/BBM/BBM-profit',
+            //     title: 'BBM Profit',
+            //     icon: CircleOutlinedIcon,
+            // },
+            // {
+            //     segment: '/dashboard/BBM/BBM-Coin-Transactions',
+            //     title: 'BBM Coin Transactions',
+            //     icon: CircleOutlinedIcon,
+            // },
+            {
+                segment: '/dashboard/BBM/BBM-Sell-Income',
+                title: 'BBM Sell Income',
+                icon: CircleOutlinedIcon,
+            }
+        ],
+    },
     {
         title: 'Wallet',
         icon: AccountBalanceWalletIcon,
