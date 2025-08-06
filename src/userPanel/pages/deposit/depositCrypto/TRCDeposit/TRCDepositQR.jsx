@@ -10,15 +10,33 @@ import {
     ListItem,
     List
 } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CountdownTimer from "../../../../userPanelComponent/CountdownTimer";
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import { useState } from "react";
 import { QRCodeCanvas } from 'qrcode.react';
+import { removeDepositQRData, removeCreatedTime, removeExpireTime, setHasTimedOut, removePaymentLoading } from "../../../../../globalState/paymentState/paymentStateSlice";
+import useCountdownTimer from "../../../../../hooks/useCountdownTimer";
 
 function TRCDepositQR() {
 
-    const { depositQRData } = useSelector(state => state.payment)
+    const dispatch = useDispatch()
+
+    const { depositQRData, createdTime, expireTime } = useSelector(state => state.payment)
+
+    const timeLeft = useCountdownTimer(createdTime, expireTime, () => {
+        // dispatch(setHasTimedOut(true));
+        dispatch(removeDepositQRData());
+        dispatch(removeCreatedTime());
+        dispatch(removeExpireTime());
+        dispatch(removePaymentLoading())
+    });
+
+    const formatTime = (seconds) => {
+        const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const s = String(seconds % 60).padStart(2, '0');
+        return `${m}:${s}`;
+    };
 
     const [copied, setCopied] = useState(false);
 
@@ -67,7 +85,10 @@ function TRCDepositQR() {
                                 </Typography>
                             )}
                             <Typography color="red">Your transaction will automatically complete after payment confirmation</Typography>
-                            <CountdownTimer />
+                            {/* <CountdownTimer /> */}
+                            <Typography fontSize={"1.2rem"} fontWeight={600} color={timeLeft === 0 ? 'error' : 'text.primary'}>
+                                {timeLeft <= 0 ? 'Time Out' : `Time Left: ${formatTime(timeLeft)}`}
+                            </Typography>
                             <Stack sx={{ alignItems: "center", gap: "10px" }}>
                                 <Box sx={{ display: "flex", gap: "5px" }}>
                                     <Typography fontWeight={"bold"}>Amount to deposit: {depositQRData?.receive_amount}</Typography>

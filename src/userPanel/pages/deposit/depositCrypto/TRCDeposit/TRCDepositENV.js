@@ -30,7 +30,7 @@ export async function initiateSocketConnection({ token, network, amount, walletT
         socket.on('paymentStatus', (data) => {
             if (data) {
                 dispatch(setNotification({ open: true, message: "Deposit done successfully", severity: "success" }));
-                dispatch(setHasTimedOut(true));
+                // dispatch(setHasTimedOut(true));
                 dispatch(removeDepositQRData());
                 dispatch(removePaymentLoading())
                 dispatch(removeCreatedTime())

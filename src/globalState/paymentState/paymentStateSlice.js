@@ -13,7 +13,7 @@ const safeParse = (key) => {
 const initialState = {
     depositQRData: safeParse("depositQRData"),
     selectedReferralCode: localStorage.getItem("selectedReferralCode") || null,
-    hasTimedOut: false,
+    // hasTimedOut: false,
     countdownEndTime: parseInt(localStorage.getItem("countdown_end_time")) || null,
     createdTime: parseInt(localStorage.getItem("created_time")) || null,
     expireTime: parseInt(localStorage.getItem("expire_time")) || null,
@@ -62,7 +62,7 @@ const paymentStateSlice = createSlice({
             state.selectedReferralCode = action.payload
         },
         setHasTimedOut: (state, action) => {
-            state.hasTimedOut = action.payload;
+            // state.hasTimedOut = action.payload;
             if (action.payload) {
                 state.countdownEndTime = null;
                 localStorage.removeItem("countdown_end_time");
