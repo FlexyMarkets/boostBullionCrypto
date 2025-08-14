@@ -7,8 +7,6 @@ function BBMICOWallet() {
 
   const { data, isLoading } = useGetUserProfileQuery()
 
-  console.log(data)
-
   const BBMOICOWalletdata = [
     {
       walletHeading: "Coin Balance",
@@ -27,12 +25,17 @@ function BBMICOWallet() {
     },
     {
       walletHeading: "Burned token reward",
-      walletBalance: !isLoading && data?.data?.burnedTokenReward,
+      walletBalance: !isLoading && data?.data?.totalBurnedTokenReward,
       icon: EqualizerIcon
     },
     {
       walletHeading: "Burned token referral",
       walletBalance: !isLoading && data?.data?.totalBurnedReferralToken,
+      icon: EqualizerIcon
+    },
+    {
+      walletHeading: "Total burned income $",
+      walletBalance: !isLoading && data?.data?.totalBurnedTokenReward$,
       icon: EqualizerIcon
     }
   ]
@@ -51,7 +54,14 @@ function BBMICOWallet() {
                 <CardContent key={i} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <Stack sx={{ flexDirection: "column", gap: ".5rem" }}>
                     <Typography>{data.walletHeading}</Typography>
-                    <Typography>{isLoading ? <Skeleton /> : data.walletBalance}</Typography>
+                    <Typography>
+                      {isLoading
+                        ? <Skeleton />
+                        : Number(data.walletBalance || 0).toLocaleString(undefined, {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 4,
+                        })}
+                    </Typography>
                   </Stack>
                   <Typography><data.icon sx={{ fontSize: "5rem", color: "primary.main" }} /></Typography>
                 </CardContent>

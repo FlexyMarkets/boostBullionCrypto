@@ -23,7 +23,10 @@ function BBMSellIncomeForm() {
 
     const { data, isLoading: useDataLoading } = useGetUserProfileQuery()
 
-    const totalTokenToSell = !useDataLoading && (data?.data?.burnedTokenReward + data?.data?.totalBurnedReferralToken)
+    const totalTokenToSell = !useDataLoading && Number((data?.data?.totalBurnedTokenReward + data?.data?.totalBurnedReferralToken) || 0).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 4,
+    })
 
     const defaultValues = {
         // wallet: "",
@@ -76,7 +79,7 @@ function BBMSellIncomeForm() {
                     <Grid item size={{ xs: 12, sm: 6 }}>
                         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                             <InputLabel sx={{ mb: ".5rem" }}>Token</InputLabel>
-                            <InputLabel sx={{ mb: ".5rem" }}>$ {totalTokenToSell}</InputLabel>
+                            <InputLabel sx={{ mb: ".5rem" }}>{totalTokenToSell}</InputLabel>
                         </Box>
                         <TextField  {...register("amount", { require: true })} size='small' fullWidth placeholder="Enter token ($)" variant="outlined" />
                         {errors.amount && <Typography color="error">{errors.amount.message}</Typography>}
